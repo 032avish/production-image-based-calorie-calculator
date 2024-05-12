@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import connectDB from '../Major Project/config/db.js';
+import connectDB from './config/db.js';
 import foodRouter from './routes/foodRouter.js'
 import dotenv from "dotenv";
 import path from "path";
@@ -17,11 +17,11 @@ const app = express();
 //middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname,'./client/build')))
+app.use(express.static(path.join(__dirname,'./build')))
 
 //rest api
 app.use("*", function(req, res){
-    res.sendFile(path.join(__dirname,'./client/build/index.html'
+    res.sendFile(path.join(__dirname,'./build/index.html'
     ));
   });
 
