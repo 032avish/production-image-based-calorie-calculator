@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import connectDB from '../Major Project/config/db.js';
+import connectDB from './config/db.js';
 import foodRouter from './routes/foodRouter.js'
 import dotenv from "dotenv";
 import path from "path";
