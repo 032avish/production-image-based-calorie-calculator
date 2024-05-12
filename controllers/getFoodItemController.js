@@ -4,7 +4,9 @@ import mongoose from "mongoose";
 
 const getFoodItemController = async (req,res)=>{
 try{
+   console.log("wjehfow");
     const food = await FoodItems.find({});
+    console.log(food);
     res.status(200).json({
       success: true,
       message: "All foodList",
