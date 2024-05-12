@@ -17,11 +17,11 @@ const app = express();
 //middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname,'build')))
+app.use(express.static(path.join(__dirname,'./client/build')))
 
 //rest api
-app.use("/", function(req, res){
-    res.sendFile(path.join(__dirname,'build','index.html'
+app.use("*", function(req, res){
+    res.sendFile(path.join(__dirname,'./client/build/index.html'
     ));
   });
 
@@ -30,7 +30,7 @@ const PORT = process.env.PORT || 8080;
 
 
 //routes
-app.use("/api/v1",foodRouter)
+app.use("/api/v1/",foodRouter)
 
 
 //run listen
